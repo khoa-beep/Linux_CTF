@@ -1,0 +1,90 @@
+- Hệ điều hành : là một phần mềm máy tính . Công việc chính của hệ điều hành là quản lý sự vận của phần cứng , tận dụng tài nguyên của phần cứng để chạy phần mềm , quản lý dữ liệu , quản lú các tác vụ của những phần mềm đang chạy , tương tác với người dùng , kết nối với thiết bị
+- Kernel : là nhân của hệ điều hành , là một bộ não của hệ điều hành . những tác vụ thông thường của hệ điều hành sẽ thông qua kernel
+- Linux : là hệ điều hành nguồn mở ai cũng có khả năng truy cập vào mã nguồn gốc để phát triển và nghiên cứu cá nhân 
+- Những hệ điều hành nhân Linux :
+   +Destiban : Ubuntu , Kali Linux , Parrot
+   +Red Hat: CentOS , Fedorra
+   +MacOS và Android được phát triển dựa trên kernel Linux
+- VPN (Virtual Private Network):Là một giao thức mã hóa dữ liệu đường truyền  gia tăng độ bảo mật khi truyền dữ liệu trên mạng internet
+- Shell : Ứng dụng cho phép người dùng tương tác với Linux Kernel
+- Basic Command Linux :
+  + ls : liệt kê toàn bộ nội dung trong directory bao gồn file dữ liệu
+  + echo : Dùng để in ra ký tự hay chuỗi ký tự phía sau nó
+     *Syntax : echo <nội dung cần in>
+     *Lưu ý : echo còn được dùng để in ra giá trị được gán cho một biến cụ thể nào đó trong Linux ( biến hệ thống trong Linux hầu hết đều viết hoa ) với điều kiện phải có operator "$" phía trước
+  + man and help flag (-help) : Lệnh man và -help  dùng để tra cứu cách sử dụng tất cả câu lệnh trong linux , tuy nhiên không phải câu lệnh nào cũng có -help
+    *Syntax : man <câu lệnh cần tra cứu>
+  + cat : dùng hiển thị nội dung trong file dữ liệu
+  + touch : tạo file dữ liệu
+  + file : hiện thông tin dữ liệu của file
+   *Lưu ý : để biết thông tin file cần chạy ta có  lệnh file -i :
+     + Tên file + extension ví dụ (.txt, .c, .php, .python, v.v.)
+     + File là application hay text, nếu là text thì là plain hay được viết bằng ngôn ngữ lập trình nào
+     + Giá trị charset
+  + su : lệnh su cho phép người dùng đăng nhập vào user khác cùng một phiên login mà không cần phải log out ,  ngoài ra lệnh su khi sử dụng mà không có username đi kèm hệ thống sẽ đăng nhập với tư cách root/superuser
+  + chmod : lệnh chmod dùng để phân quyền cho một flie 
+     *Syntax :chmod <phân-quyền> <Tên-file>
+  + chown : lệnh dùng đổi quyền sở hữu của một file hay một directory .Tuy nhiên chúng ta chỉ có thể đổi quyền sở hữu từ mình sang file khác chỉ khi phân quyền sở hữu của mình lớn hơn phân quyền của account khác cần chuyển quyền sở hữu
+      *Syntax: chown <tên-chủ-mới>:<tên-group-mới> <tên-file> 
+  + cd:để chuyển từ directory hiện tại sang directory khác.
+      *Syntax:cd <path>
+  +mkdir:chức năng dùng để tạo directory mới
+      *Syntax:mkdir<tên-directory>
+  +rm: chức năng dùng để xóa file hoặc directory
+  +mv: Chuyển file/directory từ directory này sang directory khác và đổi tên file hoặc directory
+      *Syntax : 
+               + di chuyển file/directory  : mv <tên-file > <địachỉ-đến>
+               + đổi tên file/directory : mv <tên-file><tên-mới>
+  +cp:chức năng dùng để tạo bản sao dữ liệu từ dữ liệu gốc
+  +ln:tạo đường dẫn link đến directory .Có 2 loại 2 link trong linux command line :
+     +Sort Link : tương tự hardlink nhưng trỏ trực tiếp tới file chứ không đến inode như hardlink
+       *Syntax : ln -s <nguồn> <tên-link>
+     +Hard Link : Backup dữ liệu không gây tốn thêm tài nguyên
+        *Syntax : ln  <nguồn> <tên-link>
+   +find : là câu lệnh mạnh mẽ để tìm kiếm dữ liệu trong linux
+   +grep :
+
+-Operator :
+ + ">": Dùng để chuyển hướng kết quả xuất ra hoặc ghi đè dữ liệu được lưu trữ trong file
+ + ">>" : Dùng để chuyển hướng kết quả xuất ra hoặc thêm vào dữ liệu trong file đã có sẵn
+ * Note : Cả ">" và ">>" đều có thể tạo file mới với nội dung mong muốn
+ +"&&" : Dùng để thực thi một lúc nhiều câu lệnh mà không bị giới hạn với điều kiện câu lệnh phía trước "&&" phải có nghĩa
+ +"&" : Dùng để thực thi câu lệnh tiếp theo mà không cần chờ câu lệnh trước đó được thực thi xong
+ +"$" : Dùng để gọi một biến trong hệ thống máy tính , trong linux có phân biệt rõ ràng giữa biến in hoa và in thường, thông thường hầu hết các enviroment varible đều in hoa
+   *Syntax : $<TÊN-BIẾN>
+ +"|" : Operator "|" hay còn gọi là pipe line .Đây là một operator đặc biệt sử dụng output của command đứng trước làm input cho command đứng sau nó. Thông thường pipe line sẽ đi chung với lệnh grep
+ +";" : Tương tự với operator "&&" khác ở chỗ operator ";" sẽ tiếp tục thưc hiện câu lệnh cho dù câu lệnh phía hay phía sau ";" có nghĩa hay không
+-Phân quyền trong Linux:
+ +Phân quyền trong hệ thống Linux là một trong những giải pháp được sử dụng để bảo vệ hệ thống Linux. Tất cả mọi thứ trong hệ thống Linux bao gồm câu lệnh, ứng dụng, interface, IP address, ports, v.v. đều ở dạng các file dữ liệu. Việc phân quyền cho phép quy định những ai có quyền được tiếp cận và những file nào được tiếp cận giúp hạn chế rủi ro những account thường được dùng cho các tác vụ thường ngày dù có bị hack cũng không gây ra những rủi ro lớn cho toàn hệ thống.
+ +Trong Linux, các phân  quyền trong Linux:
+   * r (read): Cho phép bạn truy cập và đọc file dữ liệu
+   * w (write): Cho phép bạn chỉnh sửa, thay đổi nội dung, tạo mới hoặc xóa bỏ nội dung đang tồn tại trong file dữ liệu, cũng như bạn sẽ có quyền đổi tên dữ liệu được chứa bên trong file hiện tại
+  * x (execute): Cho phép bạn thực thi, chạy file dữ liệu, nếu file đó là một file thực thi
+  * s (SUID):nó cho phép khi file được thực thi bởi một user account nào đó, nó sẽ được thực thi dưới phân quyền của người chủ của file
+  * S(SGID): công dụng gần tương tự với SUID. Điểm khác biệt duy nhất đó là nếu một ứng dụng được cho phép tiếp cận bởi một group người dùng, và ứng dụng này được set SGID, thì khi ứng dụng này được chạy, nó sẽ chạy với phân quyền của group owner và cũng là phân quyền của toàn bộ thành viên trong group
+- Cấu trúc hệ thống file trong Linux :
+ +Directory / : Hay còn được biết đến là root directory , tất cả các directories trong hệ thống linux đều là thư mục con của root directory
+ +Directory/bin:Những câu lệnh phổ thông trong hệ thống linux thực chất là phần mềm máy tính được viết ra để hỗ trợ người dùng trong việc tương tác với Linux
+ +Directory/boot : Là nơi chứa các file cần trong việc khởi động máy tính ex:kernel ,grub ,initrd..
+ +Directory/dev : Là nơi chứa các file thiết bị hoặc thiết bị để tương tác các driver thiết bị được kết nối vào Linux,đồng thời còn chứa cả những pseudo-devices hay còn được gọi là thiết bị ảo (không có phần cứng nhìn thấy được như USB hay ổ cứng) ví dụ như /dev/null.
+ +Directory/etc :Đây là nơi chứa những file thiết lập cần thiết cho một phần mềm nào đó trong hệ thống Linux. Không những thế, những file thiết lập cần cho cả hệ thống Linux và người dùng
+ +Directory/home :chứa HOME directories của tất cả những account người dùng bình thường trong hệ thống Linux, ngoại trừ root account
+ +Directory /lib :nơi chứa những thư viện cần để chạy những phần mềm cũng chính là các câu lệnh trong directory /bin và những ứng dụng trong directory /sbin
+ +Directory /media :Được sử dụng để chứa những directories con cũng chính là những thiết bị được kết nối vào hệ thống Linux . Khi bạn kết nối một thiết bị, vào hệ thống Linux, một directory sẽ được tạo ra bên trong directory /media cho phép bạn truy cập vào những nội dung được chứa bên trongđó.
+ + Directory /opt:nơi chứa những directories con vốn là những phần mềm của bên thứ ba ví dụ như Libreoffice, Chrome, v.v.
+ + Directory /proc :nơi chứa thông tin về hệ thống cũng như các process đang chạy trong hệ thống.
+ + Directory /sbin :Đây là directory chứa những phần mềm của các câu lệnh được sử dụng chủ yếu bởi Linux system admin để quản trị hệ thống, ví dụ như reboot, ifconfig, fdisk, v.v.
+ + Directory /tmp :Đây là directory cấp toàn quyền (rwx) cho mọi account người dùng trên hệ thống Linux và hay được dùng làm bàn đạp để vận chuyển các file mã độc/tấn công từ máy hacker đến máy nạn nhân.
+ + Directory /usr:Nơi chứa những phần mềm được sử dụng trong hệ thống Linux
+     * /bin: Chứa các phần mềm câu lệnh phổ thông. Ví dụ như ls, cat, ping, ls, mkdir, v.v.
+     */sbin: Chứa các phần mềm câu lệnh được sử dụng bởi system admin. Ví dụ như: init, ifconfig, fdisk, v.v.
+     */opt: Chứa những phần mềm bên thứ 3. Ví dụ như : office, broswer, v.v.
+     */usr/…: Chứa những phần mềm dành riêng cho distro Linux. Ví dụ như với Kali Linux, các công cụ như nmap,                      gobuster, wfuzz, v.v. dành cho việc pentest đều được tập trung bên trong những directories con của directory /usr
+    +Bên trong directory /usr có các directories con như:
+      * /usr/bin: Chứa các phần mềm dành cho người dùng như nmap, gobuster, v.v.
+      */usr/sbin: Chứa các phần mềm dành để quản trị hệ thống
+      */usr/share: Nơi chứa những file hỗ trợ dành cho các phần mềm bên trong /usr
+      Các bạn cần ghi nhớ directory /usr/share/wordlists trên Kali Linux, đây là directory chứa các từ điển dùng để tấn công dictionary attack, tìm file ẩn trên website, v.v.
+ +Directory /var : nơi chứa những biến như log, mail, cache, v.v. mà giá trị được chứa bên trong của nó sẽ thay đổi liên tục trong suốt quá trình vận hành của hệ thống
+
+    
